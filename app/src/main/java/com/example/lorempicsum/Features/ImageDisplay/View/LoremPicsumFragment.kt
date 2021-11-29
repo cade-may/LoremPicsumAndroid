@@ -9,7 +9,6 @@ import androidx.fragment.app.activityViewModels
 import com.example.lorempicsum.Features.ImageDisplay.ViewModel.LoremPicsumViewModel
 import java.util.*
 
-
 class LoremPicsumFragment : Fragment() {
 
     private lateinit var root: LoremPicsumFragmentView

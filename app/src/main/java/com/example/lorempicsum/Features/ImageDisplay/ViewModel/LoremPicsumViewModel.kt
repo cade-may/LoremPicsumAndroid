@@ -71,6 +71,7 @@ class LoremPicsumViewModel(application: Application) : AndroidViewModel(applicat
         this._imageRequestBuilder.postValue(ionImageRequestBuilder)
     }
 
+    /** Compute time difference and update observable */
     private fun updateLoadTimeDisplay(imageFetchStartTime: Long) {
         val endTime = System.nanoTime()
         val nanoSecondDiff = endTime - imageFetchStartTime
@@ -79,6 +80,7 @@ class LoremPicsumViewModel(application: Application) : AndroidViewModel(applicat
         this._loadTimeString.postValue("$roundedSecondsDiff seconds")
     }
 
+    /** Pull image id from image response header and fetch metadata */
     private fun parseHeadersAndFetchImageDetails(response: com.koushikdutta.ion.Response<String>) {
         val headerDict = response.headers.headers
         headerDict.get("Picsum-Id")?.let { str ->
@@ -88,6 +90,7 @@ class LoremPicsumViewModel(application: Application) : AndroidViewModel(applicat
         }
     }
 
+    /** Fetch metadata for imageId */
     private fun getImageDetails(imageId: Int) {
         viewModelScope.launch {
             try {
@@ -99,6 +102,7 @@ class LoremPicsumViewModel(application: Application) : AndroidViewModel(applicat
         }
     }
 
+    /** Derive current timestamp and update observable once per second */
     private fun initDateTimeDisplayTimer() {
         val sdf = SimpleDateFormat("EEE, d MMM yyyy hh:mm a", Locale.getDefault())
 
