@@ -20,10 +20,6 @@ class LoremPicsumViewModel(application: Application) : AndroidViewModel(applicat
     /* = = = data = = = */
     private val repository: ImageRepository = ImageRepository()
 
-    fun init() {
-        this.initDateTimeDisplayTimer()
-    }
-
     /* = = = observables = = = */
     private var _picsumImageDetails: MutableLiveData<PicsumImageDetails?> = MutableLiveData()
     val picsumImageDetails: LiveData<PicsumImageDetails?>
@@ -40,6 +36,10 @@ class LoremPicsumViewModel(application: Application) : AndroidViewModel(applicat
     private var _imageRequestBuilder: MutableLiveData<Builders.Any.B?> = MutableLiveData()
     val imageRequestBuilder: LiveData<Builders.Any.B?>
         get() = _imageRequestBuilder
+
+    fun onViewCreated() {
+        this.initDateTimeDisplayTimer()
+    }
 
     fun launchFetchImage() {
         viewModelScope.launch {

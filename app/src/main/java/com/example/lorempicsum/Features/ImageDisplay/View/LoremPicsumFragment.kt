@@ -29,17 +29,7 @@ class LoremPicsumFragment : Fragment() {
         setupObservers()
         fetchImage()
         initActions()
-        this.viewModel.init()
-    }
-
-    private fun initActions() {
-        this.root.roundedImageView.mainImageView.setOnClickListener {
-            this.fetchImage()
-        }
-    }
-
-    private fun fetchImage() {
-        this.viewModel.launchFetchImage()
+        this.viewModel.onViewCreated()
     }
 
     private fun initRoot(): LoremPicsumFragmentView {
@@ -47,11 +37,21 @@ class LoremPicsumFragment : Fragment() {
         return root
     }
 
+    private fun fetchImage() {
+        this.viewModel.launchFetchImage()
+    }
+
     private fun setupObservers() {
         observeDate()
         observeLoadTime()
         observeImageDetails()
         observeImageRequest()
+    }
+
+    private fun initActions() {
+        this.root.roundedImageView.mainImageView.setOnClickListener {
+            this.fetchImage()
+        }
     }
 
     private fun observeImageRequest() {
