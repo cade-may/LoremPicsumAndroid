@@ -1,4 +1,4 @@
-package com.example.lorempicsum.View
+package com.example.lorempicsum.Features.ImageDisplay.View
 
 import android.content.Context
 import android.text.TextUtils

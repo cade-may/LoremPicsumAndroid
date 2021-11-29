@@ -1,6 +1,6 @@
 package com.example.lorempicsum.Data
 
-import com.example.lorempicsum.Model.PicsumImageDetails
+import com.example.lorempicsum.Features.ImageDisplay.Model.PicsumImageDetails
 import com.example.lorempicsum.NetworkService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

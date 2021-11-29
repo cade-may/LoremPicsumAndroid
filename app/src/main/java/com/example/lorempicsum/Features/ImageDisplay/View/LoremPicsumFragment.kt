@@ -1,4 +1,4 @@
-package com.example.lorempicsum.View
+package com.example.lorempicsum.Features.ImageDisplay.View
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.example.lorempicsum.ViewModel.LoremPicsumViewModel
+import com.example.lorempicsum.Features.ImageDisplay.ViewModel.LoremPicsumViewModel
 import java.util.*
 
 

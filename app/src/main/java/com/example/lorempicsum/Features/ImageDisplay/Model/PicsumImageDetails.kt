@@ -1,4 +1,4 @@
-package com.example.lorempicsum.Model
+package com.example.lorempicsum.Features.ImageDisplay.Model
 
 data class PicsumImageDetails(
     val id: String,

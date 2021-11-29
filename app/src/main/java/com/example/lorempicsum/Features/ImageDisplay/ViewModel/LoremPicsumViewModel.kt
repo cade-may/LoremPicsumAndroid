@@ -1,9 +1,9 @@
-package com.example.lorempicsum.ViewModel
+package com.example.lorempicsum.Features.ImageDisplay.ViewModel
 
 import android.app.Application
 import androidx.lifecycle.*
 import com.example.lorempicsum.Data.ImageRepository
-import com.example.lorempicsum.Model.PicsumImageDetails
+import com.example.lorempicsum.Features.ImageDisplay.Model.PicsumImageDetails
 import com.koushikdutta.ion.Ion
 import com.koushikdutta.ion.builder.Builders
 import kotlinx.coroutines.launch
