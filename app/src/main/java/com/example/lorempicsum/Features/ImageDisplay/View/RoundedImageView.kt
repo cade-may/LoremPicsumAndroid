@@ -28,8 +28,6 @@ class RoundedImageView @JvmOverloads constructor(
         this.preventCornerOverlap = true
         this.useCompatPadding = true
         this.radius = 20F
-//        setContentPadding(0, 8.toPx(), 0, 8.toPx())
-//        background = ContextCompat.getDrawable(context, R.drawable.gradient_join_club_button)
         this.cardElevation = 12F
         this.isClickable = true
         this.strokeColor = ContextCompat.getColor(context, R.color.black)

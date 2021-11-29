@@ -7,9 +7,11 @@ import com.example.lorempicsum.Features.ImageDisplay.Model.PicsumImageDetails
 import com.koushikdutta.ion.Ion
 import com.koushikdutta.ion.builder.Builders
 import kotlinx.coroutines.launch
+import java.lang.Math.pow
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.concurrent.fixedRateTimer
+import kotlin.math.pow
 import kotlin.random.Random
 
 class LoremPicsumViewModel(application: Application) : AndroidViewModel(application) {
@@ -38,31 +40,6 @@ class LoremPicsumViewModel(application: Application) : AndroidViewModel(applicat
     private var _imageRequestBuilder: MutableLiveData<Builders.Any.B?> = MutableLiveData()
     val imageRequestBuilder: LiveData<Builders.Any.B?>
         get() = _imageRequestBuilder
-
-
-//    fun fetchImage(): Builders.Any.B? {
-//        // for load duration calculation
-//        val imageFetchStartTime = System.nanoTime()
-//
-//        // load random image
-//        val seed = Random.nextInt(0, 100000) // prevent caching
-//        val ionImageRequestBuilder = Ion.with(context)
-//            .load("https://picsum.photos/seed/${seed}/200/300")
-//
-//        // fetch metadata
-//        ionImageRequestBuilder
-//            .asString()
-//            .withResponse()
-//            .setCallback { e, result ->
-//                if (e == null) {
-//                    this.updateLoadTimeDisplay(imageFetchStartTime)
-//                    this.parseHeadersAndFetchImageDetails(result)
-//                }
-//            }
-//
-//        // return builder
-//        return ionImageRequestBuilder
-//    }
 
     fun launchFetchImage() {
         viewModelScope.launch {
@@ -97,8 +74,9 @@ class LoremPicsumViewModel(application: Application) : AndroidViewModel(applicat
     private fun updateLoadTimeDisplay(imageFetchStartTime: Long) {
         val endTime = System.nanoTime()
         val nanoSecondDiff = endTime - imageFetchStartTime
-        val millisecondDiff = nanoSecondDiff / 1000000
-        this._loadTimeString.postValue("${millisecondDiff}ms")
+        val secondsDiff = nanoSecondDiff * 10.0.pow(-9.0)
+        val roundedSecondsDiff: Double = Math.round(secondsDiff * 1000.0) / 1000.0
+        this._loadTimeString.postValue("$roundedSecondsDiff seconds")
     }
 
     private fun parseHeadersAndFetchImageDetails(response: com.koushikdutta.ion.Response<String>) {
@@ -122,7 +100,7 @@ class LoremPicsumViewModel(application: Application) : AndroidViewModel(applicat
     }
 
     private fun initDateTimeDisplayTimer() {
-        val sdf = SimpleDateFormat("EEE, d MMM yyyy hh:mm:ss a", Locale.getDefault())
+        val sdf = SimpleDateFormat("EEE, d MMM yyyy hh:mm a", Locale.getDefault())
 
         fixedRateTimer("timer", true, 0L, 1000) {
             val date = Calendar.getInstance().time

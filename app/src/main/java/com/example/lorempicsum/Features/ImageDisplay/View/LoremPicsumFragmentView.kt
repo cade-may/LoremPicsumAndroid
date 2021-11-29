@@ -1,6 +1,7 @@
 package com.example.lorempicsum.Features.ImageDisplay.View
 
 import android.content.Context
+import android.graphics.Typeface
 import android.text.TextUtils
 import android.util.AttributeSet
 import android.view.Gravity
@@ -91,6 +92,7 @@ class LoremPicsumFragmentView @JvmOverloads constructor(
             LinearLayout.LayoutParams.WRAP_CONTENT
         )
         textView.setTextColor(ContextCompat.getColor(context, R.color.black))
+        textView.setTypeface(null, Typeface.BOLD)
         textView.textSize = 15F
         textView.maxLines = 1
         textView.ellipsize = TextUtils.TruncateAt.END

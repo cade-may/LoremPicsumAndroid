@@ -93,23 +93,4 @@ class LoremPicsumFragment : Fragment() {
         }
     }
 
-//    private fun fetchImage() {
-//        // load random image
-//        val seed = Random.nextInt(0, 100000) // prevent caching
-//        val loaded = Ion.with(context)
-//            .load("https://picsum.photos/seed/${seed}/200/300")
-//
-//        // place in imageview
-//        loaded.intoImageView(root.roundedImageView.mainImageView)
-//
-//        // fetch metadata
-//        loaded
-//            .asString()
-//            .withResponse()
-//            .setCallback { e, result ->
-//                if (e == null) {
-//                    this.viewModel.parseHeadersAndFetchImageDetails(result)
-//                }
-//            }
-//    }
 }

@@ -1,6 +1,7 @@
 package com.example.lorempicsum.Features.ImageDisplay.View
 
 import android.content.Context
+import android.graphics.Typeface
 import android.text.TextUtils
 import android.util.AttributeSet
 import android.view.Gravity
@@ -8,6 +9,7 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import com.example.lorempicsum.R
 import com.example.lorempicsum.toPx
 
@@ -46,7 +48,7 @@ class MetadataView @JvmOverloads constructor(
         val textView = TextView(context)
         textView.layoutParams = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
         textView.setTextColor(ContextCompat.getColor(context, R.color.black))
-//        textView.typeface = ResourcesCompat.getFont(context, R.font.lineto_circular_book)
+        textView.setTypeface(null, Typeface.BOLD)
         textView.textSize = 16F
         textView.maxLines = 1
         textView.setPadding(0, 0, 4.toPx(), 0)
@@ -59,7 +61,6 @@ class MetadataView @JvmOverloads constructor(
         val textView = TextView(context)
         textView.layoutParams = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
         textView.setTextColor(ContextCompat.getColor(context, R.color.cardview_dark_background))
-//        textView.typeface = ResourcesCompat.getFont(context, R.font.lineto_circular_book)
         textView.textSize = 14F
         textView.maxLines = 1
         textView.ellipsize = TextUtils.TruncateAt.END
