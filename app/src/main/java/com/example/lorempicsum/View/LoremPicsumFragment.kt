@@ -1,16 +1,13 @@
-package com.example.lorempicsum
+package com.example.lorempicsum.View
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.koushikdutta.ion.Ion
-import java.text.SimpleDateFormat
+import com.example.lorempicsum.ViewModel.LoremPicsumViewModel
 import java.util.*
-import kotlin.random.Random
 
 
 class LoremPicsumFragment : Fragment() {

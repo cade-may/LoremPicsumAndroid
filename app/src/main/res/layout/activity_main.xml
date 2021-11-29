@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/LoremPicsumFragment"
-        android:name="com.example.lorempicsum.LoremPicsumFragment"
+        android:name="com.example.lorempicsum.View.LoremPicsumFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

@@ -1,4 +1,4 @@
-package com.example.lorempicsum
+package com.example.lorempicsum.View
 
 import android.content.Context
 import android.text.TextUtils
@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import com.example.lorempicsum.R
+import com.example.lorempicsum.toPx
 
 class LoremPicsumFragmentView @JvmOverloads constructor(
     context: Context,

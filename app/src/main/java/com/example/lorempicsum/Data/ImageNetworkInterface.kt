@@ -1,5 +1,6 @@
-package com.example.lorempicsum
+package com.example.lorempicsum.Data
 
+import com.example.lorempicsum.Model.PicsumImageDetails
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

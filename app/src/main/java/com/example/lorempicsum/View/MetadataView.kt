@@ -1,17 +1,15 @@
-package com.example.lorempicsum
+package com.example.lorempicsum.View
 
 import android.content.Context
-import android.os.Bundle
 import android.text.TextUtils
 import android.util.AttributeSet
 import android.view.Gravity
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
+import com.example.lorempicsum.R
+import com.example.lorempicsum.toPx
 
 class MetadataView @JvmOverloads constructor(
     context: Context,

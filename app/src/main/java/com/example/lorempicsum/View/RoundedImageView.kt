@@ -1,13 +1,12 @@
-package com.example.lorempicsum
+package com.example.lorempicsum.View
 
 import android.content.Context
 import android.util.AttributeSet
-import android.view.Gravity
 import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
+import com.example.lorempicsum.R
+import com.example.lorempicsum.toPx
 import com.google.android.material.card.MaterialCardView
 
 class RoundedImageView @JvmOverloads constructor(
