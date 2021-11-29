@@ -52,8 +52,8 @@ class LoremPicsumViewModel(application: Application) : AndroidViewModel(applicat
         val imageFetchStartTime = System.nanoTime()
 
         // load random image
-        val seed = Random.nextInt(0, 100000) // prevent caching
-        val imageUrl = "https://picsum.photos/seed/${seed}/200/300"
+        val seed = Random.nextInt(0, 1000000) // prevent caching
+        val imageUrl = "https://picsum.photos/seed/${seed}/400/500"
         val ionImageRequestBuilder = Ion.with(context).load(imageUrl)
 
         // fetch metadata
