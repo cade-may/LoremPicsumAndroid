@@ -11,6 +11,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.example.lorempicsum.R
+import com.example.lorempicsum.setMargins
 import com.example.lorempicsum.toPx
 
 class LoremPicsumFragmentView @JvmOverloads constructor(
@@ -47,26 +48,31 @@ class LoremPicsumFragmentView @JvmOverloads constructor(
     private fun initLayout() {
         // dateTimeTextView
         dateTimeTextView = initDateTextView()
+        dateTimeTextView.setMargins(0,0,0, 1.toPx())
         this.addView(dateTimeTextView)
 
         // imageIdView
         imageIdView = MetadataView(context)
         imageIdView.leftTextView.text = "Image id:"
+        imageIdView.setMargins(0,0,0, 1.toPx())
         this.addView(imageIdView)
 
         // widthMetadataView
         widthView = MetadataView(context)
         widthView.leftTextView.text = "Width:"
+        widthView.setMargins(0,0,0, 1.toPx())
         this.addView(widthView)
 
         // heightView
         heightView = MetadataView(context)
         heightView.leftTextView.text = "Height:"
+        heightView.setMargins(0,0,0, 1.toPx())
         this.addView(heightView)
 
         // loadTimeView
         loadTimeView = MetadataView(context)
         loadTimeView.leftTextView.text = "Load time:"
+        loadTimeView.setMargins(0,0,0, 1.toPx())
         this.addView(loadTimeView)
 
         // roundedImageView
